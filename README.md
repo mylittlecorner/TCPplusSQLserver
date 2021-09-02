@@ -1,4 +1,4 @@
 # Command prompt ->
-csc server.cs servertcp.cs SQLConn.cs
+csc server.cs tcpserver.cs SQLConn.cs
 ->
 server.exe "connection string"
