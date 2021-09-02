@@ -8,13 +8,16 @@ class server
 {
   public static void Main(String[] args)
   {
-        //String connection = @"";
-        String connection = args[0];
-        if (args.Length != 1){
-          Console.WriteLine("Connection string required!");
+     if (args.Length != 3){
+          Console.WriteLine("Invalid command line arguments!");
           System.Environment.Exit(-1);
         }
-      tcpserver tcps = new tcpserver("127.0.0.1",13000,connection);
+        //String connection = @"";
+		  String host = args[0];
+		  String port = args[1];
+      String connection = args[2];
+        
+      tcpserver tcps = new tcpserver(host,Convert.ToInt32(port),connection);
       tcps.Start();
       tcps.Run();
   }
